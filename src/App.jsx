@@ -1,7 +1,12 @@
+// src/App.jsx
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+// Components
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+
+// Pages
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
@@ -15,28 +20,35 @@ function App() {
     <Router>
       <div className="App">
         <Navbar />
-        
-        {/* Quick Debug Nav */}
-        <div className="text-center my-4">
-          <Link to="/" className="btn btn-primary me-3">Go to Home</Link>
-          <Link to="/about" className="btn btn-success">Go to About</Link>
-        </div>
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/technologies" element={<Technologies />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/testimonials" element={<Testimonials />} />
-          
-          {/* Fallback Route for 404 */}
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/technologies" element={<Technologies />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/testimonials" element={<Testimonials />} />
 
-
-          <Route path="*" element={<h2 className="text-center my-5">404 - Page Not Found</h2>} />
-
-        </Routes>
+            {/* 404 Fallback */}
+            <Route
+              path="*"
+              element={
+                <div className="text-center py-5">
+                  <h2>404 - Page Not Found</h2>
+                  <p className="text-muted">The page you're looking for doesn't exist.</p>
+                  <button
+                    className="btn btn-primary"
+                    onClick={() => window.history.back()}
+                  >
+                    Go Back
+                  </button>
+                </div>
+              }
+            />
+          </Routes>
+        </main>
 
         <Footer />
       </div>
