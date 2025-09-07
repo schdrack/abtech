@@ -102,7 +102,7 @@ const Home = () => {
         <div className="container py-5 position-relative" style={{ zIndex: 2 }}>
           <div className={`fade-in ${isVisible ? 'visible' : ''}`} style={{ transition: 'all 1s ease' }}>
             <h1 className="display-2 fw-bold mb-3" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
-              AB Tech
+              AB_Tech
             </h1>
             <p className="lead mb-4" style={{ fontSize: '1.3rem' }}>
               Pioneering Electronics & Automation Solutions
