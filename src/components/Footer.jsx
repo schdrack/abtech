@@ -171,6 +171,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
+      <h5>This website was developed by Muragijimana Schadrack contact me 0791767725</h5>
     </footer>
   );
 };
