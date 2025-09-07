@@ -73,7 +73,7 @@ const Navbar = () => {
           {/* Logo & Brand */}
           <div className="d-flex align-items-center justify-content-center">
             <img
-              src="public/images/abtech.jpg"
+              src="/images/abtech.jpg"
               alt="AB Tech Logo"
               width="40"
               height="40"
