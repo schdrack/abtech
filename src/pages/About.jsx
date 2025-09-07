@@ -60,25 +60,25 @@ const About = () => {
   // Team Members
   const team = [
     {
-      name: "Jean Niyonzima",
+      name: "Muragijimana Schadrack",
       role: "Lead Engineer",
       image: "https://i.pravatar.cc/150?img=1",
       bio: "PLC & automation expert with 7 years of industrial experience."
     },
     {
-      name: "Claire Uwimana",
+      name: "Ngabirano Amani Blaise",
       role: "Electronics Specialist",
       image: "https://i.pravatar.cc/150?img=2",
       bio: "Designs and repairs high-performance electronic systems."
     },
     {
-      name: "David Mugisha",
+      name: "Ukurikiyimfura Olivier",
       role: "IoT & Software Lead",
       image: "https://i.pravatar.cc/150?img=3",
       bio: "Builds embedded systems with Python and Raspberry Pi."
     },
     {
-      name: "Faustin Nsengimana",
+      name: "Niyonshuti Elie",
       role: "Field Technician",
       image: "https://i.pravatar.cc/150?img=4",
       bio: "On-site installation and maintenance across Rwanda."
