@@ -15,40 +15,38 @@ const Testimonials = () => {
       leaveReview: "Leave a Review on WhatsApp",
       submitForm: "Submit a Testimonial",
       formTitle: "Share Your Experience",
-      formSubtitle: "We'd love to hear how AB Tech helped you!",
+      formSubtitle: "We'd love to hear how InfinityMura supported you!",
       liveFeed: "Live Client Feedback from WhatsApp",
       noMessages: "No recent messages yet. Start the conversation!",
       from: "From"
     },
     kin: {
-      title: "Abakiriya Bacye",
-      subtitle: "Bacendana na bisanga n'imiryango y'ubuhinzi mu Rwanda",
-      rating: "Yaba 5/5 ku bukikozwe no kubwanya",
-      leaveReview: "Andika Ikiganiro ku WhatsApp",
-      submitForm: "Andika Icyifuzo",
-      formTitle: "Shyiraho Ubusobanuro bwawe",
-      formSubtitle: "Twgeraho icyo AB Tech kibaza mu byemezo byawe!",
-      liveFeed: "Icyifuzo cy'Abakiriya ku WhatsApp",
-      noMessages: "Nta ubutumwa buri mu gihe. Komeza kubaza!",
-      from: "Ku"
+      title: "Ibyo Abakiriya Bavuga",
+      subtitle: "Bizeye n’Imishinga n’Ibigo bitandukanye mu Rwanda",
+      rating: "Batanga amanota 5/5 ku bw’ukwizera no guhanga udushya",
+      leaveReview: "Tanga Ubutumwa kuri WhatsApp",
+      submitForm: "Ohereza Icyo uvuze",
+      formTitle: "Sangiza Uburyo Wabikunze",
+      formSubtitle: "Turishimira kumenya uko InfinityMura yagufashije!",
+      liveFeed: "Ubutumwa bw’Abakiriya bwa Live kuri WhatsApp",
+      noMessages: "Nta butumwa bushya buraboneka. Tangira ikiganiro!",
+      from: "Ubutumwa bwa"
     }
   };
 
-  // Simulated WhatsApp Messages (in production, this could come from a server/webhook)
+  // Simulated WhatsApp Messages
   const mockMessages = [
     { id: 1, name: "Jean", text: "Great service! Automation system works perfectly.", time: "2 min ago" },
     { id: 2, name: "Claire", text: "Fast response and excellent technical support.", time: "10 min ago" },
-    { id: 3, name: "David", text: "Highly recommend AB Tech for PLC projects.", time: "15 min ago" }
+    { id: 3, name: "David", text: "Highly recommend InfinityMura for PLC projects.", time: "15 min ago" }
   ];
 
-  // Load WhatsApp messages on mount
   useEffect(() => {
     setWhatsAppMessages(mockMessages);
 
-    // Simulate new incoming messages (optional)
     const interval = setInterval(() => {
       setWhatsAppMessages(prev => {
-        const newMsgs = prev.slice(-2); // Keep only last 2
+        const newMsgs = prev.slice(-2);
         return [
           ...newMsgs,
           {
@@ -68,12 +66,12 @@ const Testimonials = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Your Google Form Embed Link (replace with your real form ID)
   const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfYourFormIDHere/viewform?embedded=true";
 
   return (
     <section className="section bg-light" style={{ paddingTop: '100px', paddingBottom: '80px' }}>
       <div className="container">
+
         {/* Language Toggle */}
         <div className="text-end mb-3">
           <button
@@ -90,7 +88,7 @@ const Testimonials = () => {
           <p className="lead text-muted">{t[lang].subtitle}</p>
         </div>
 
-        {/* Live WhatsApp Testimonial Feed */}
+        {/* Live WhatsApp Feed */}
         <div className="bg-white p-4 rounded shadow-sm mb-5" style={{ borderRadius: '16px' }}>
           <h3 className="mb-4" style={{ color: '#25D366' }}>
             <FaWhatsapp size={28} className="me-2" />
@@ -119,7 +117,7 @@ const Testimonials = () => {
           {/* WhatsApp CTA */}
           <div className="text-center mt-4">
             <a
-              href="https://wa.me/250791831403?text=Hi%20AB%20Tech%2C%20I%27d%20like%20to%20share%20my%20experience!"
+              href="https://wa.me/250791831403?text=Hi%20InfinityMura%2C%20I%27d%20like%20to%20share%20my%20experience!"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-success btn-lg d-inline-flex align-items-center"
@@ -136,7 +134,6 @@ const Testimonials = () => {
               <h3 className="mb-3" style={{ color: '#007bff' }}>{t[lang].formTitle}</h3>
               <p className="text-muted mb-4">{t[lang].formSubtitle}</p>
 
-              {/* Embedded Google Form */}
               <div style={{ height: '600px', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}>
                 <iframe
                   src={GOOGLE_FORM_URL}
@@ -152,12 +149,11 @@ const Testimonials = () => {
                 </iframe>
               </div>
 
-              {/* Confirmation Note */}
               <p className="text-muted mt-3 text-center">
                 <FaCheckCircle color="#6aa121" className="me-1" />
                   {lang === 'en'
                     ? "Your testimonial will be reviewed and may be featured on this page."
-                    : "Icyifuzo cyawe kizagaruguruza kandi kizaba mu iyi nyandiko."
+                    : "Icyo uvuga kizagenzurwa kandi gishobora kugaragara kuri uru rupapuro."
                   }
               </p>
             </div>
@@ -176,6 +172,7 @@ const Testimonials = () => {
             📧 Contact Us for More Info
           </a>
         </div>
+
       </div>
     </section>
   );
